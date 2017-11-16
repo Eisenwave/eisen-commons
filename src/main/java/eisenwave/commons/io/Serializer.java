@@ -5,18 +5,16 @@ import java.io.*;
 /**
  * Throwaway object for writing objects to files.
  * <p>
- *     The serializer interface is designed as a utility interface, giving each implementation several methods for
- *     serializing to URL's, files, byte arrays and more.
- * </p>
+ * The serializer interface is designed as a utility interface, giving each implementation several methods for
+ * serializing to URL's, files, byte arrays and more.
  * <p>
- *     The only method to be implemented is {@link #toStream(Object, OutputStream)} which writes an object into
- *     a generic output stream.
- * </p>
+ * The only method to be implemented is {@link #toStream(Object, OutputStream)} which writes an object into
+ * a generic output stream.
  *
  * @param <T> the type of object which is to be serialized
  */
 public interface Serializer<T> {
-
+    
     /**
      * Writes the object into a {@link OutputStream}.
      *
@@ -25,7 +23,7 @@ public interface Serializer<T> {
      * @throws IOException if an I/O error occurs
      */
     public void toStream(T object, OutputStream stream) throws IOException;
-
+    
     /**
      * Writes the object into a {@link File} using a {@link FileOutputStream}.
      *
@@ -40,7 +38,7 @@ public interface Serializer<T> {
             }
         }
     }
-
+    
     /**
      * Writes the object into bytes {@code byte[]} using a {@link ByteArrayOutputStream} with set capacity.
      *
@@ -56,7 +54,7 @@ public interface Serializer<T> {
         stream.close();
         return stream.toByteArray();
     }
-
+    
     /**
      * Writes the object into bytes {@code byte[]} using a {@link ByteArrayOutputStream} with unset capacity.
      *
@@ -71,5 +69,5 @@ public interface Serializer<T> {
         stream.close();
         return stream.toByteArray();
     }
-
+    
 }

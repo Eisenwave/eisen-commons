@@ -75,7 +75,7 @@ public final class PrimParse {
     }
     
     public static byte parseByte(String s) {
-        return parseByte(s, (byte)0, 10);
+        return parseByte(s, (byte) 0, 10);
     }
     
     public static float parseFloat(String s, float d) {

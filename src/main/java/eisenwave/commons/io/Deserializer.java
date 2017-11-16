@@ -7,19 +7,17 @@ import java.net.URL;
 
 /**
  * Throwaway object only meant to perform one deserialization of a stream.
- *<p>
- *     The deserializer interface is designed as a utility interface, giving each implementation several methods for
- *     reading from URL's, files, byte arrays and more.
- * </p>
  * <p>
- *     The only method to be implemented is {@link #fromStream(InputStream)} which reads an object from a generic
- *     input stream.
- * </p>
+ * The deserializer interface is designed as a utility interface, giving each implementation several methods for
+ * reading from URL's, files, byte arrays and more.
+ * <p>
+ * The only method to be implemented is {@link #fromStream(InputStream)} which reads an object from a generic
+ * input stream.
  *
  * @param <T> the type of object which is to be deserialized
  */
 public interface Deserializer<T> {
-
+    
     /**
      * Deserializes an object from an {@link InputStream}.
      *
@@ -29,7 +27,7 @@ public interface Deserializer<T> {
      */
     @NotNull
     public abstract T fromStream(InputStream stream) throws IOException;
-
+    
     /**
      * Deserializes an object from a {@link File} using a {@link FileInputStream}.
      *
@@ -45,7 +43,7 @@ public interface Deserializer<T> {
             }
         }
     }
-
+    
     /**
      * Deserializes an object from a {@code byte[]} using a {@link ByteArrayInputStream}.
      *
@@ -58,7 +56,7 @@ public interface Deserializer<T> {
         ByteArrayInputStream stream = new ByteArrayInputStream(bytes);
         return fromStream(stream);
     }
-
+    
     /**
      * Deserializes an object from a {@link Class} and a resource path by opening a stream to the resource via the
      * {@link ClassLoader}.
@@ -71,11 +69,11 @@ public interface Deserializer<T> {
     @NotNull
     public default T fromResource(Class<?> clazz, String resPath) throws IOException {
         try (InputStream stream = clazz.getClassLoader().getResourceAsStream(resPath)) {
-            if (stream == null) throw new IOException("resource \""+resPath+"\" could not be found");
+            if (stream == null) throw new IOException("resource \"" + resPath + "\" could not be found");
             return fromStream(stream);
         }
     }
-
+    
     /**
      * Deserializes an object from a {@link URL} by opening a stream to it.
      *
@@ -92,7 +90,7 @@ public interface Deserializer<T> {
     
     @NotNull
     public default T fromURL(String url) throws IOException {
-       return fromURL(new URL(url));
+        return fromURL(new URL(url));
     }
     
 }

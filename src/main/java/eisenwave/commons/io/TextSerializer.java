@@ -5,7 +5,7 @@ import org.jetbrains.annotations.NotNull;
 import java.io.*;
 
 public interface TextSerializer<T> extends Serializer<T> {
-
+    
     /**
      * Writes the object into a {@link Writer}.
      *
@@ -41,7 +41,7 @@ public interface TextSerializer<T> extends Serializer<T> {
         toWriter(object, writer);
         return writer.toString();
     }
-
+    
     /**
      * Writes the object into an {@link OutputStream} using an {@link OutputStreamWriter}.
      *
@@ -55,7 +55,7 @@ public interface TextSerializer<T> extends Serializer<T> {
         toWriter(object, writer);
         writer.flush();
     }
-
+    
     /**
      * Writes the object into a {@link File} using an {@link FileWriter}.
      *
@@ -69,5 +69,5 @@ public interface TextSerializer<T> extends Serializer<T> {
             toWriter(object, writer);
         }
     }
-
+    
 }

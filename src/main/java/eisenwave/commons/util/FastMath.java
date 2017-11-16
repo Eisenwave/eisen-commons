@@ -3,10 +3,7 @@ package eisenwave.commons.util;
 import org.jetbrains.annotations.Contract;
 
 /**
- * <p>
- *     Utility class that provides faster or more convenient alternatives to {@link Math}.
- * </p>
- *
+ * Utility class that provides faster or more convenient alternatives to {@link Math}.
  */
 public final class FastMath {
     
@@ -14,14 +11,11 @@ public final class FastMath {
     
     /**
      * <p>
-     *     Returns the inverted square root of x. (1 / \u221Ax)
-     * </p>
+     * Returns the inverted square root of x. (1 / \u221Ax)
      * <p>
-     *     This method is not guaranteed to be faster than inverting {@link Math#sqrt(double)}.
-     * </p>
+     * This method is not guaranteed to be faster than inverting {@link Math#sqrt(double)}.
      * <p>
-     *     <b>Any performance boost is platform dependent! In fact, this method may perform worse than Java's sqrt.</b>
-     * </p>
+     * <b>Any performance boost is platform dependent! In fact, this method may perform worse than Java's sqrt.</b>
      *
      * @param x the number
      * @return the inverted sqrt of x
@@ -38,14 +32,11 @@ public final class FastMath {
     
     /**
      * <p>
-     *     Returns the inverted square root of x. (1 / \u221Ax)
-     * </p>
+     * Returns the inverted square root of x. (1 / \u221Ax)
      * <p>
-     *     This method is not guaranteed to be faster than inverting {@link Math#sqrt(double)}.
-     * </p>
+     * This method is not guaranteed to be faster than inverting {@link Math#sqrt(double)}.
      * <p>
-     *     <b>Any performance boost is platform dependent! In fact, this method may perform worse than Java's sqrt.</b>
-     * </p>
+     * <b>Any performance boost is platform dependent! In fact, this method may perform worse than Java's sqrt.</b>
      *
      * @param x the number
      * @return the inverted sqrt of x
@@ -62,11 +53,11 @@ public final class FastMath {
     
     /**
      * <p>
-     *     Returns the natural logarithm (<i>lat. logarithmus naturalis</i>) of a number <b>n</b>. (<code>ln(n)</code>)
+     * Returns the natural logarithm (<i>lat. logarithmus naturalis</i>) of a number <b>n</b>. (<code>ln(n)</code>)
      * </p>
      * <p>
-     *     The <a href="https://en.wikipedia.org/wiki/Natural_logarithm">natural logarithm</a> is the logarithm to the
-     *     base <i>e</i> (<a href="https://en.wikipedia.org/wiki/E_(mathematical_constant)">Euler's Number</a>).
+     * The <a href="https://en.wikipedia.org/wiki/Natural_logarithm">natural logarithm</a> is the logarithm to the
+     * base <i>e</i> (<a href="https://en.wikipedia.org/wiki/E_(mathematical_constant)">Euler's Number</a>).
      * </p>
      *
      * @param number the number
@@ -81,12 +72,10 @@ public final class FastMath {
     
     /**
      * <p>
-     *     Returns the binary logarithm of a number <b>n</b>.
-     * </p>
+     * Returns the binary logarithm of a number <b>n</b>.
      * <p>
-     *     The <a href="https://en.wikipedia.org/wiki/Binary_logarithm">binary logarithm</a> is the logarithm to the
-     *     base 2. (<code>log<sub>2</sub>(n)</code>)
-     * </p>
+     * The <a href="https://en.wikipedia.org/wiki/Binary_logarithm">binary logarithm</a> is the logarithm to the
+     * base 2. (<code>log<sub>2</sub>(n)</code>)
      *
      * @param number the number
      * @return the binary logarithm
@@ -98,12 +87,10 @@ public final class FastMath {
     
     /**
      * <p>
-     *     Returns the binary logarithm of a number <b>n</b>.
-     * </p>
+     * Returns the binary logarithm of a number <b>n</b>.
      * <p>
-     *     The <a href="https://en.wikipedia.org/wiki/Binary_logarithm">binary logarithm</a> is the logarithm to the
-     *     base 2. (<code>log<sub>2</sub>(n)</code>)
-     * </p>
+     * The <a href="https://en.wikipedia.org/wiki/Binary_logarithm">binary logarithm</a> is the logarithm to the
+     * base 2. (<code>log<sub>2</sub>(n)</code>)
      *
      * @param number the number
      * @return the binary logarithm
@@ -116,9 +103,9 @@ public final class FastMath {
     /**
      * Returns the smallest positive power of two which is greater or equal than the given number.
      * <blockquote>
-     *     <code>greaterPow2(25) = 32</code><br>
-     *     <code>greaterPow2(8) = 8</code><br>
-     *     <code>greaterPow2(-2) = 1</code>
+     * <code>greaterPow2(25) = 32</code><br>
+     * <code>greaterPow2(8) = 8</code><br>
+     * <code>greaterPow2(-2) = 1</code>
      * </blockquote>
      *
      * @param num the number
@@ -137,9 +124,9 @@ public final class FastMath {
     /**
      * Returns the smallest positive power of two which is greater or equal than the given number.
      * <blockquote>
-     *     <code>greaterPow2(25) = 32</code>
-     *     <code>greaterPow2(8) = 8</code>
-     *     <code>greaterPow2(-2) = 1</code>
+     * <code>greaterPow2(25) = 32</code>
+     * <code>greaterPow2(8) = 8</code>
+     * <code>greaterPow2(-2) = 1</code>
      * </blockquote>
      *
      * @param num the number
@@ -149,7 +136,7 @@ public final class FastMath {
     public static long greaterPow2(long num) {
         if (num < 1) return 1;
         if (num > (0x40000000_00000000L)) return 0x40000000_00000000L; // overflow protection
-    
+        
         long pow = 1;
         while (pow < num) pow *= 2;
         return pow;
@@ -157,12 +144,10 @@ public final class FastMath {
     
     /**
      * <p>
-     *     Returns the decimal logarithm of a number <b>n</b>.
-     * </p>
+     * Returns the decimal logarithm of a number <b>n</b>.
      * <p>
-     *     The <a href="https://en.wikipedia.org/wiki/Common_logarithm">decimal logarithm</a> is the logarithm to the
-     *     base 10. (<code>log<sub>10</sub>(n)</code>)
-     * </p>
+     * The <a href="https://en.wikipedia.org/wiki/Common_logarithm">decimal logarithm</a> is the logarithm to the
+     * base 10. (<code>log<sub>10</sub>(n)</code>)
      *
      * @param number the number
      * @return the decimal logarithm
@@ -237,5 +222,5 @@ public final class FastMath {
         
         return res;
     }
-
+    
 }

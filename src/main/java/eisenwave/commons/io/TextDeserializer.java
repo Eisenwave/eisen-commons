@@ -6,18 +6,16 @@ import java.io.*;
 
 /**
  * Throwaway object only meant to perform one deserialization of a reader.
- *<p>
- *     The parser interface is designed as a utility interface which is an extension of the {@link Deserializer}
- *     interface specifically for readable files.
- * </p>
  * <p>
- *     The only method to be implemented is {@link #fromReader(Reader)} which reads an object from a generic reader.
- * </p>
+ * The parser interface is designed as a utility interface which is an extension of the {@link Deserializer}
+ * interface specifically for readable files.
+ * <p>
+ * The only method to be implemented is {@link #fromReader(Reader)} which reads an object from a generic reader.
  *
  * @param <T> the type of object which is to be parsed
  */
 public interface TextDeserializer<T> extends Deserializer<T> {
-
+    
     /**
      * Deserializes an object from a {@link Reader}.
      *
@@ -38,7 +36,7 @@ public interface TextDeserializer<T> extends Deserializer<T> {
     default T fromCharArray(char[] chars) throws IOException {
         return fromReader(new CharArrayReader(chars));
     }
-
+    
     /**
      * Deserializes an object from a {@link String} using a {@link StringReader}.
      *
@@ -66,6 +64,6 @@ public interface TextDeserializer<T> extends Deserializer<T> {
             return fromReader(reader);
         }
     }
-
-
+    
+    
 }

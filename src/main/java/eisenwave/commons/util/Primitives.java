@@ -18,7 +18,7 @@ public final class Primitives {
             case "byte": return Byte.TYPE;
             case "void": return Void.TYPE;
             case "short": return Short.TYPE;
-            default: throw new ClassNotFoundException(str+" is not a primitive");
+            default: throw new ClassNotFoundException(str + " is not a primitive");
         }
     }
     
