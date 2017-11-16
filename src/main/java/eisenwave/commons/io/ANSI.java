@@ -70,7 +70,7 @@ public final class ANSI {
     @NotNull
     @Contract(pure = true)
     private static String sgr(int code) {
-        return ESC + "\u001B[" + code + "m";
+        return ESC + "[" + code + "m";
     }
 
 }
