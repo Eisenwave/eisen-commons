@@ -150,7 +150,7 @@ public final class PrimMath {
     
     @Contract(pure = true)
     public static int signum(int x) {
-        return x > 0? 1 : x < 0? -1 : 0;
+        return Integer.compare(x, 0);
     }
     
     @Contract(pure = true)
