@@ -53,7 +53,7 @@ public final class FastMath {
     
     /**
      * <p>
-     * Returns the natural logarithm (<i>lat. logarithmus naturalis</i>) of a number <b>n</b>. (<code>ln(n)</code>)
+     * Returns the natural logarithm (<i>lat. logarithmus naturalis</i>) of a number <b>n</b>. ({@code ln(n)})
      * </p>
      * <p>
      * The <a href="https://en.wikipedia.org/wiki/Natural_logarithm">natural logarithm</a> is the logarithm to the
@@ -103,9 +103,9 @@ public final class FastMath {
     /**
      * Returns the smallest positive power of two which is greater or equal than the given number.
      * <blockquote>
-     * <code>greaterPow2(25) = 32</code><br>
-     * <code>greaterPow2(8) = 8</code><br>
-     * <code>greaterPow2(-2) = 1</code>
+     * {@code greaterPow2(25) = 32}<br>
+     * {@code greaterPow2(8) = 8}<br>
+     * {@code greaterPow2(-2) = 1}
      * </blockquote>
      *
      * @param num the number
@@ -124,9 +124,9 @@ public final class FastMath {
     /**
      * Returns the smallest positive power of two which is greater or equal than the given number.
      * <blockquote>
-     * <code>greaterPow2(25) = 32</code>
-     * <code>greaterPow2(8) = 8</code>
-     * <code>greaterPow2(-2) = 1</code>
+     * {@code greaterPow2(25) = 32}
+     * {@code greaterPow2(8) = 8}
+     * {@code greaterPow2(-2) = 1}
      * </blockquote>
      *
      * @param num the number
